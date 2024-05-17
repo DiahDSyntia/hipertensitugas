@@ -235,13 +235,7 @@ if selected == "Modelling":
         """
         st.markdown(html_code, unsafe_allow_html=True)
 
-if selected == "Implementation":
-    st.title(f"{selected}")
-    st.write("""
-            ### Pilih Metode yang anda inginkan :"""
-            )
-    algoritma =st.selectbox('Pilih', ('SVM', 'SVM+Bagging'))
-    
+if selected == "Implementation":    
     st.write("""
     ### Penjelasan :"""
     )
@@ -254,6 +248,13 @@ if selected == "Implementation":
     st.write('6. Nafas: Nafas pasien yang dihitung /menit. Secara umum frekuensi nafas pada orang dewasa (19-59 tahun) adalah 12-20 nafas/menit')
     st.write('7. Detak Nadi: Detak nadi pasien. Pada orang normal dewasa detak nadi berkisar 60-100 kali/menit.')
 
+
+    st.title(f"{selected}")
+    st.write("""
+            ### Pilih Metode yang anda inginkan :"""
+            )
+    algoritma =st.selectbox('Pilih', ('SVM', 'SVM+Bagging'))
+    
     st.write("""
     ### Input Data :"""
     )
