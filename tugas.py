@@ -236,6 +236,12 @@ if selected == "Modelling":
         st.markdown(html_code, unsafe_allow_html=True)
 
 if selected == "Implementation":
+    st.title(f"{selected}")
+    st.write("""
+            ### Pilih Metode yang anda inginkan :"""
+            )
+    algoritma =st.selectbox('Pilih', ('SVM', 'SVM+Bagging'))
+    
     st.write("""
     ### Penjelasan :"""
     )
@@ -274,19 +280,24 @@ if selected == "Implementation":
             'Nafas': [Nafas],
             'Detak Nadi': [Detak_nadi]
         }
-        new_data = pd.DataFrame(data)
+
+        new_data = pd.DataFrame(data_input)
         datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/X_test1.csv')  
         datatest = pd.concat([datatest, new_data], ignore_index=True)
-        #st.write(datatest)
-        datanorm = joblib.load('scaler (2).pkl').fit_transform(datatest)
-        datapredict = joblib.load('modelrbf (1).pkl').predict(datanorm)
-
+        
+        scaler = joblib.load('scaler (2).pkl')
+        model_filename = 'modelrbf (1).pkl' if algoritma == 'SVM' else 'modelbaggingrbf.pkl'
+        model = joblib.load(model_filename)
+        
+        datanorm = scaler.transform(datatest)
+        datapredict = model.predict(datanorm)
+        
         st.write('Data yang Diinput:')
         st.write(f'- Jenis Kelamin: {Jenis_Kelamin}, Usia: {Usia}, IMT: {IMT}, Sistole: {Sistole}, Diastole: {Diastole}, Nafas: {Nafas}, Detak Nadi: {Detak_nadi}')
         
-        if datapredict[-1] == 1 :
-            st.write("""# Hasil Prediksi : Hipertensi 1, Silahkan Ke Dokter""")
+        if datapredict[-1] == 1:
+            st.write("# Hasil Prediksi: Hipertensi 1, Silahkan Ke Dokter")
         elif datapredict[-1] == 2:
-            st.write("# Hipertensi 2, Silahkan ke dokter")
+            st.write("# Hasil Prediksi: Hipertensi 2, Silahkan Ke Dokter")
         else:
             st.write("# Tidak Hipertensi")
