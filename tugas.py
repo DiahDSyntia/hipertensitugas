@@ -80,8 +80,7 @@ with st.sidebar:
         menu_icon="menu-up",  # optional
         default_index=0,  # optional
         )
-
-
+    
 if selected == "Home":
     st.title(f'Web Klasifikasi Hipertensi')
     st.write('Hipertensi adalah kondisi yang terjadi ketika tekanan darah naik di atas kisaran normal, biasanya masyarakat menyebutnya darah tinggi. Penyakit hipertensi berkaitan dengan kenaikan tekanan darah di sistolik maupun diastolik. Faktor faktor yang berperan untuk penyakit ini adalah perubahan gaya hidup, asupan makanan dengan kadar lemak tinggi, dan kurangnya aktivitas fisik seperti olahraga')
