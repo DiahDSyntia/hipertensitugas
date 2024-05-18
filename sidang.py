@@ -104,6 +104,16 @@ if selected == "Dataset":
     st.write('Jumlah baris dan kolom :', data_hp.shape)
     X=data_hp.iloc[:,0:7].values 
     y=data_hp.iloc[:,7].values
+    # Menghitung jumlah orang dalam setiap kelas
+    jumlah_hipertensi_1 = (data['Diagnosa'] == 1).sum()
+    jumlah_hipertensi_2 = (data['Diagnosa'] == 2).sum()
+    jumlah_tidak_hipertensi = (data['Diagnosa'] == 0).sum()
+    
+    # Menampilkan hasil
+    st.write(f"Jumlah Hipertensi 1: {jumlah_hipertensi_1}")
+    st.write(f"Jumlah Hipertensi 2: {jumlah_hipertensi_2}")
+    st.write(f"Jumlah Tidak Hipertensi: {jumlah_tidak_hipertensi}")
+    
     st.write('Dataset Description :')
     st.write('1. Jenis Kelamin: Jenis Kelamin pasien. P= Perempuan, L= Laki-Laki')
     st.write('2. Usia: Usia dari pasien')
