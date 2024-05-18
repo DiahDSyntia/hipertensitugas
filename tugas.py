@@ -99,7 +99,7 @@ if selected == "Home":
 if selected == "Datasets":
     st.title(f"{selected}")
     st.write("Data yang digunakan yaitu data Penyakit Hipertensi dari UPT Puskesmas Modopuro Mojokerto.")
-    data_hp = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafixhipertensi.csv', sep=';')
+    data_hp = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
     st.write("Dataset Hipertensi : ", data_hp) 
     st.write('Jumlah baris dan kolom :', data_hp.shape)
     X=data_hp.iloc[:,0:7].values 
@@ -119,7 +119,7 @@ if selected == "Pre-Processing":
     st.markdown('<h3 style="text-align: left;"> Data Asli </h1>', unsafe_allow_html=True)
     st.write("Berikut merupakan data asli yang didapat dari UPT Puskesmas Modopuro Mojokerto.")
     
-    df = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafixhipertensi.csv', sep=';')
+    df = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
     st.write("Dataset Hipertensi : ", df) 
     st.markdown('<h3 style="text-align: left;"> Lakukan Cleaning Data </h1>', unsafe_allow_html=True)
     if st.button("Clean Data"):
@@ -146,7 +146,7 @@ if selected == "Pre-Processing":
 
 if selected == "Modelling":
     st.write("Hasil Akurasi, Presisi, Recall, F1- Score Metode SVM")
-    data = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datanormalisasi%20(1).csv', sep=';')
+    data = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datanorm.csv', sep=';')
 
     # Memisahkan fitur dan target
     X = data[['Usia', 'IMT', 'Sistole', 'Diastole', 'Nafas','Detak Nadi','JK_L','JK_P']]
@@ -254,6 +254,9 @@ if selected == "Implementation":
     st.write("""
     ### Input Data :"""
     )
+    st.write(""" ### Pilih Metode yang anda inginkan :""")
+    algoritma =st.selectbox('Pilih', ('SVM', 'SVM+Bagging'))
+    
     Jenis_Kelamin = st.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
     # Convert gender to binary
     #gender_binary = 1 if Jenis_Kelamin == "Laki-laki" else 0
@@ -279,14 +282,14 @@ if selected == "Implementation":
         }
 
         new_data = pd.DataFrame(data_input)
-        datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/X_test1.csv')  
+        datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/X_testing1.csv')  
         datatest = pd.concat([datatest, new_data], ignore_index=True)
         
         scaler = joblib.load('scaler (2).pkl')
         datanorm = scaler.transform(datatest)
     
         if algoritma == 'SVM':
-            model = joblib.load('modelrbf (1).pkl')
+            model = joblib.load('rbfmodelling.pkl')
             model_name = 'SVM'
         else:
             model = joblib.load('modelbaggingrbf.pkl')
