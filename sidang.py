@@ -75,7 +75,7 @@ def normalize_data(data):
 with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",  # required
-        options=["Home","Pre-Processing", "Modelling", "Implementation"],  # required
+        options=["Home", "Datasets", "Pre-Processing", "Modelling", "Implementation"],  # required
         icons=["house","folder", "file-bar-graph", "card-list", "calculator"],  # optional
         menu_icon="menu-up",  # optional
         default_index=0,  # optional
@@ -95,22 +95,15 @@ if selected == "Home":
     6. Nafas
     7. Detak Nadi
     """)
+
+if selected == "Datasets":
+    st.title(f"{selected}")
     st.write("Data yang digunakan yaitu data Penyakit Hipertensi dari UPT Puskesmas Modopuro Mojokerto.")
-    data_hp = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
+    data_hp = pd.read_csv("https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/DATABARU3.xlsx%20-%20DATAFIX.csv")
     st.write("Dataset Hipertensi : ", data_hp) 
     st.write('Jumlah baris dan kolom :', data_hp.shape)
     X=data_hp.iloc[:,0:7].values 
     y=data_hp.iloc[:,7].values
-    
-    # Menghitung jumlah orang dalam setiap kelas
-    jumlah_hipertensi_1 = (data_hp['Diagnosa'] == 'HIPERTENSI 1').sum()
-    jumlah_hipertensi_2 = (data_hp['Diagnosa'] == 'HIPERTENSI 2').sum()
-    jumlah_tidak_hipertensi = (data_hp['Diagnosa'] == 'TIDAK').sum()
-    # Menampilkan hasil
-    st.write(f"Jumlah Hipertensi 1: {jumlah_hipertensi_1}")
-    st.write(f"Jumlah Hipertensi 2: {jumlah_hipertensi_2}")
-    st.write(f"Jumlah Tidak Hipertensi: {jumlah_tidak_hipertensi}")
-
     st.write('Dataset Description :')
     st.write('1. Jenis Kelamin: Jenis Kelamin pasien. P= Perempuan, L= Laki-Laki')
     st.write('2. Usia: Usia dari pasien')
@@ -119,13 +112,14 @@ if selected == "Home":
     st.write('5. Diastolik: Tekanan darah diastolik pasien (mmHg). Tekanan darah diastolik adalah tekanan darah saat jantung berelaksasi (jantung tidak sedang memompa darah) sebelum kembali memompa darah, tekanan darah diastolik meningkat melebihi 90 mmHg')
     st.write('6. Nafas: Nafas pasien yang dihitung /menit. Secara umum frekuensi nafas pada orang dewasa (19-59 tahun) adalah 12-20 nafas/menit')
     st.write('7. Detak Nadi: Detak nadi pasien. Pada orang normal dewasa detak nadi berkisar 60-100 kali/menit.')
+    
 
 if selected == "Pre-Processing":
     st.title(f"{selected}")
     st.markdown('<h3 style="text-align: left;"> Data Asli </h1>', unsafe_allow_html=True)
     st.write("Berikut merupakan data asli yang didapat dari UPT Puskesmas Modopuro Mojokerto.")
     
-    df = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
+    df = pd.read_csv("https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/DATABARU3.xlsx%20-%20DATAFIX.csv")
     st.write("Dataset Hipertensi : ", df) 
     st.markdown('<h3 style="text-align: left;"> Lakukan Cleaning Data </h1>', unsafe_allow_html=True)
     if st.button("Clean Data"):
@@ -152,7 +146,7 @@ if selected == "Pre-Processing":
 
 if selected == "Modelling":
     st.write("Hasil Akurasi, Presisi, Recall, F1- Score Metode SVM")
-    data = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datanorm1.csv', sep=';')
+    data = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/datanormalisasi.csv', sep=';')
 
     # Memisahkan fitur dan target
     X = data[['Usia', 'IMT', 'Sistole', 'Diastole', 'Nafas','Detak Nadi','JK_L','JK_P']]
@@ -244,12 +238,12 @@ if selected == "Modelling":
         st.markdown(html_code, unsafe_allow_html=True)
 
 if selected == "Implementation":
-    data = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datanorm1.csv', sep=';')
+    data = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/datanormalisasi2.csv', sep=';')
         
     #st.write("Dataset Hipertensi : ", data)
     
     # Memisahkan fitur dan target
-    X = data[['Usia', 'IMT', 'Sistole', 'Diastole', 'Nafas','Detak Nadi','JK_L','JK_P']]
+    X = data[['Usia', 'IMT', 'Sistole', 'Diastole', 'Nafas','Detak Nadi','Jenis Kelamin']]
     y = data['Diagnosa']
 
     # Bagi dataset menjadi data latih dan data uji
@@ -340,11 +334,11 @@ if selected == "Implementation":
             'Detak Nadi': [Detak_nadi]
         }
         new_data = pd.DataFrame(data)
-        datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/X_test1.csv')  
+        datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/datatestingsebnormalisasi1.csv')  
         datatest = pd.concat([datatest, new_data], ignore_index=True)
         #st.write(datatest)
-        datanorm = joblib.load('scalermmodel (1).pkl').fit_transform(datatest)
-        datapredict = joblib.load('rbfmodel.pkl').predict(datanorm)
+        datanorm = joblib.load('scaler.pkl').fit_transform(datatest)
+        datapredict = joblib.load('modelrbf.pkl').predict(datanorm)
 
         st.write('Data yang Diinput:')
         st.write(f'- Jenis Kelamin: {Jenis_Kelamin}, Usia: {Usia}, IMT: {IMT}, Sistole: {Sistole}, Diastole: {Diastole}, Nafas: {Nafas}, Detak Nadi: {Detak_nadi}')
