@@ -337,7 +337,7 @@ if selected == "Implementation":
         datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/X_testing1.csv')  
         datatest = pd.concat([datatest, new_data], ignore_index=True)
         #st.write(datatest)
-        datanorm = joblib.load('scalermodel.pkl').fit_transform(datatest)
+        datanorm = joblib.load('scalermmodel.pkl').fit_transform(datatest)
         datapredict = joblib.load('rbfmodelling.pkl').predict(datanorm)
 
         st.write('Data yang Diinput:')
