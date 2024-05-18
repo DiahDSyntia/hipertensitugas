@@ -168,7 +168,7 @@ L;58 Tahun;22,04;170 mm;70 Hg;18 /menit;88 /menit;HIPERTENSI 2
 P;74 Tahun;27,06;140 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 1
 P;51 Tahun;24,97;180 mm;80 Hg;18 /menit;88 /menit;HIPERTENSI 2
 P;64 Tahun;22,15;192 mm;119 Hg;18 /menit;80 /menit;HIPERTENSI 2
-P;51 Tahun;32.32;140 mm;90 Hg;20 /menit;84 /menit;TIDAK
+P;51 Tahun;32.32;140 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
 P;69 Tahun;19,4;160 mm;90 Hg;18 /menit;80 /menit;HIPERTENSI 2
 L;28 Tahun;26.31;100 mm;70 Hg;30 /menit;82 /menit;TIDAK
 P;57 Tahun;23,83;140 mm;78 Hg;20 /menit;80 /menit;HIPERTENSI 1
@@ -590,7 +590,7 @@ P;48 Tahun;33,3;140 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
 P;3 Tahun;15.84;80 mm;60 Hg;20 /menit;80 /menit;TIDAK
 P;66 Tahun;26,71;140 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
 L;73 Tahun;20.5;110 mm;70 Hg;18 /menit;78 /menit;TIDAK
-P;48 Tahun;24.34;140 mm;90 Hg;20 /menit;88 /menit;TIDAK
+P;48 Tahun;24.34;140 mm;90 Hg;20 /menit;88 /menit;HIPERTENSI 1
 P;53 Tahun;24,14;160 mm;100 Hg;20 /menit;84 /menit;HIPERTENSI 2
 P;71 Tahun;19,4;170 mm;90 Hg;18 /menit;80 /menit;HIPERTENSI 2
 P;72 Tahun;13,15;140 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
@@ -637,7 +637,7 @@ L;35 Tahun;26.18;110 mm;70 Hg;18 /menit;80 /menit;TIDAK
 L;62 Tahun;22,66;180 mm;80 Hg;18 /menit;88 /menit;HIPERTENSI 2
 P;74 Tahun;23,73;160 mm;100 Hg;20 /menit;80 /menit;HIPERTENSI 2
 P;70 Tahun;21,11;180 mm;80 Hg;18 /menit;88 /menit;HIPERTENSI 2
-P;38 Tahun;22.43;140 mm;80 Hg;20 /menit;88 /menit;TIDAK
+P;38 Tahun;22.43;140 mm;80 Hg;20 /menit;88 /menit;HIPERTENSI 1
 L;73 Tahun;18,26;160 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 2
 L;18 Tahun;23.31;110 mm;70 Hg;20 /menit;80 /menit;TIDAK
 L;18 Tahun;22.89;120 mm;80 Hg;16 /menit;55 /menit;TIDAK
@@ -690,7 +690,7 @@ L;45 Tahun;23,44;180 mm;80 Hg;18 /menit;88 /menit;HIPERTENSI 2
 P;51 Tahun;22,89;140 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
 L;61 Tahun;23,59;170 mm;80 Hg;18 /menit;88 /menit;HIPERTENSI 2
 P;64 Tahun;22,43;184 mm;100 Hg;19 /menit;80 /menit;HIPERTENSI 2
-P;53 Tahun;22.43;162 mm;97 Hg;20 /menit;88 /menit;TIDAK
+P;53 Tahun;22.43;162 mm;97 Hg;20 /menit;88 /menit;HIPERTENSI 2
 P;66 Tahun;22;180 mm;100 Hg;20 /menit;80 /menit;HIPERTENSI 2
 P;61 Tahun;24,89;170 mm;80 Hg;18 /menit;88 /menit;HIPERTENSI 2
 L;52 Tahun;22.43;122 mm;67 Hg;20 /menit;80 /menit;TIDAK
@@ -811,7 +811,7 @@ P;73 Tahun;20;140 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 1
 P;61 Tahun;28,72;150 mm;100 Hg;20 /menit;88 /menit;HIPERTENSI 1
 L;40 Tahun;24.03;120 mm;80 Hg;20 /menit;80 /menit;TIDAK
 L;2 Tahun;15.22;70 mm;60 Hg;30 /menit;100 /menit;TIDAK
-L;55 Tahun;22.43;163 mm;97 Hg;20 /menit;88 /menit;TIDAK
+L;55 Tahun;22.43;163 mm;97 Hg;20 /menit;88 /menit;HIPERTENSI 2
 P;60 Tahun;22,43;165 mm;81 Hg;18 /menit;80 /menit;HIPERTENSI 2
 P;61 Tahun;86.26;125 mm;92 Hg;18 /menit;80 /menit;TIDAK
 L;41 Tahun;22,04;150 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 1
@@ -829,7 +829,7 @@ L;42 Tahun;37.64;130 mm;80 Hg;20 /menit;84 /menit;TIDAK
 P;14 Tahun;23.31;130 mm;80 Hg;16 /menit;77 /menit;TIDAK
 P;51 Tahun;22,89;150 mm;90 Hg;20 /menit;88 /menit;HIPERTENSI 1
 P;53 Tahun;26,71;146 mm;90 Hg;20 /menit;88 /menit;HIPERTENSI 1
-P;71 Tahun;22.89;140 mm;90 Hg;20 /menit;80 /menit;TIDAK
+P;71 Tahun;22.89;140 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 1
 P;40 Tahun;23.31;110 mm;70 Hg;20 /menit;80 /menit;TIDAK
 L;44 Tahun;25.53;120 mm;80 Hg;20 /menit;80 /menit;TIDAK
 P;59 Tahun;24,97;160 mm;80 Hg;18 /menit;80 /menit;HIPERTENSI 2
@@ -861,7 +861,7 @@ P;28 Tahun;22.89;120 mm;80 Hg;16 /menit;77 /menit;TIDAK
 P;60 Tahun;26.64;120 mm;70 Hg;20 /menit;88 /menit;TIDAK
 L;60 Tahun;27,94;155 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
 P;81 Tahun;21,11;170 mm;89 Hg;18 /menit;88 /menit;HIPERTENSI 2
-P;51 Tahun;24.97;143 mm;86 Hg;16 /menit;80 /menit;TIDAK
+P;51 Tahun;24.97;143 mm;86 Hg;16 /menit;80 /menit;HIPERTENSI 1
 P;38 Tahun;22.89;120 mm;80 Hg;16 /menit;77 /menit;TIDAK
 P;54 Tahun;30,22;140 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 1
 L;44 Tahun;25.53;120 mm;80 Hg;20 /menit;80 /menit;TIDAK
@@ -1032,7 +1032,7 @@ P;74 Tahun;23,83;140 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
 P;22 Tahun;20.96;120 mm;80 Hg;20 /menit;80 /menit;TIDAK
 L;55 Tahun;23,8;150 mm;90 Hg;20 /menit;88 /menit;HIPERTENSI 1
 P;66 Tahun;17,72;150 mm;90 Hg;20 /menit;84 /menit;HIPERTENSI 1
-L;86 Tahun;22.58;140 mm;90 Hg;18 /menit;80 /menit;TIDAK
+L;86 Tahun;22.58;140 mm;90 Hg;18 /menit;80 /menit;HIPERTENSI 1
 P;56 Tahun;23,59;160 mm;90 Hg;20 /menit;88 /menit;HIPERTENSI 2
 L;5 Tahun;11.42;110 mm;60 Hg;20 /menit;88 /menit;TIDAK
 P;61 Tahun;24,97;140 mm;90 Hg;20 /menit;80 /menit;HIPERTENSI 1
