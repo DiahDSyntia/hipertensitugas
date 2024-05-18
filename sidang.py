@@ -75,7 +75,7 @@ def normalize_data(data):
 with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",  # required
-        options=["Home", "Datasets", "Pre-Processing", "Modelling", "Implementation"],  # required
+        options=["Home","Pre-Processing", "Modelling", "Implementation"],  # required
         icons=["house","folder", "file-bar-graph", "card-list", "calculator"],  # optional
         menu_icon="menu-up",  # optional
         default_index=0,  # optional
@@ -103,9 +103,9 @@ if selected == "Home":
     y=data_hp.iloc[:,7].values
     
     # Menghitung jumlah orang dalam setiap kelas
-    jumlah_hipertensi_1 = (data_hp['Diagnosa'] == 1).sum()
-    jumlah_hipertensi_2 = (data_hp['Diagnosa'] == 2).sum()
-    jumlah_tidak_hipertensi = (data_hp['Diagnosa'] == 0).sum()
+    jumlah_hipertensi_1 = (data_hp['Diagnosa'] == 'HIPERTENSI 1').sum()
+    jumlah_hipertensi_2 = (data_hp['Diagnosa'] == 'HIPERTENSI 2').sum()
+    jumlah_tidak_hipertensi = (data_hp['Diagnosa'] == 'TIDAK').sum()
     # Menampilkan hasil
     st.write(f"Jumlah Hipertensi 1: {jumlah_hipertensi_1}")
     st.write(f"Jumlah Hipertensi 2: {jumlah_hipertensi_2}")
