@@ -334,11 +334,11 @@ if selected == "Implementation":
             'Detak Nadi': [Detak_nadi]
         }
         new_data = pd.DataFrame(data)
-        datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/datatestingsebnormalisasi1.csv')  
+        datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/X_testing1.csv')  
         datatest = pd.concat([datatest, new_data], ignore_index=True)
         #st.write(datatest)
-        datanorm = joblib.load('scaler.pkl').fit_transform(datatest)
-        datapredict = joblib.load('modelrbf.pkl').predict(datanorm)
+        datanorm = joblib.load('scalermodel.pkl').fit_transform(datatest)
+        datapredict = joblib.load('rbfmodelling.pkl').predict(datanorm)
 
         st.write('Data yang Diinput:')
         st.write(f'- Jenis Kelamin: {Jenis_Kelamin}, Usia: {Usia}, IMT: {IMT}, Sistole: {Sistole}, Diastole: {Diastole}, Nafas: {Nafas}, Detak Nadi: {Detak_nadi}')
