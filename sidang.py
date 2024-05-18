@@ -337,8 +337,8 @@ if selected == "Implementation":
         datatest = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/Tugas-Akhir/main/datatestingsebnormalisasi1.csv')  
         datatest = pd.concat([datatest, new_data], ignore_index=True)
         #st.write(datatest)
-        datanorm = joblib.load('scaler.pkl').fit_transform(datatest)
-        datapredict = joblib.load('modelrbf.pkl').predict(datanorm)
+        datanorm = joblib.load('https://github.com/DiahDSyntia/Tugas-Akhir/blob/main/scaler.pkl').fit_transform(datatest)
+        datapredict = joblib.load('https://github.com/DiahDSyntia/Tugas-Akhir/blob/main/modelrbf.pkl').predict(datanorm)
 
         st.write('Data yang Diinput:')
         st.write(f'- Jenis Kelamin: {Jenis_Kelamin}, Usia: {Usia}, IMT: {IMT}, Sistole: {Sistole}, Diastole: {Diastole}, Nafas: {Nafas}, Detak Nadi: {Detak_nadi}')
