@@ -96,7 +96,7 @@ if selected == "Home":
     7. Detak Nadi
     """)
 
-if selected == "Datasets":
+if selected == "Dataset":
     st.title(f"{selected}")
     st.write("Data yang digunakan yaitu data Penyakit Hipertensi dari UPT Puskesmas Modopuro Mojokerto.")
     data_hp = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
