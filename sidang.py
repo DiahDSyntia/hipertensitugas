@@ -95,9 +95,25 @@ if selected == "Home":
     6. Nafas
     7. Detak Nadi
     """)
+    st.write("Data yang digunakan yaitu data Penyakit Hipertensi dari UPT Puskesmas Modopuro Mojokerto.")
+    data_hp = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
+    st.write("Dataset Hipertensi : ", data_hp) 
+    st.write('Jumlah baris dan kolom :', data_hp.shape)
+    X=data_hp.iloc[:,0:7].values 
+    y=data_hp.iloc[:,7].values
+    # Menghitung jumlah orang dalam setiap kelas
+    jumlah_hipertensi_1 = (data['Diagnosa'] == 1).sum()
+    jumlah_hipertensi_2 = (data['Diagnosa'] == 2).sum()
+    jumlah_tidak_hipertensi = (data['Diagnosa'] == 0).sum()
+    
+    # Menampilkan hasil
+    st.write(f"Jumlah Hipertensi 1: {jumlah_hipertensi_1}")
+    st.write(f"Jumlah Hipertensi 2: {jumlah_hipertensi_2}")
+    st.write(f"Jumlah Tidak Hipertensi: {jumlah_tidak_hipertensi}")
 
 if selected == "Dataset":
     st.title(f"{selected}")
+    
     st.write("Data yang digunakan yaitu data Penyakit Hipertensi dari UPT Puskesmas Modopuro Mojokerto.")
     data_hp = pd.read_csv('https://raw.githubusercontent.com/DiahDSyntia/hipertensitugas/main/datafix3.csv', sep=';')
     st.write("Dataset Hipertensi : ", data_hp) 
